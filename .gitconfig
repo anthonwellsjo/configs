@@ -1,0 +1,7 @@
+[user]
+	name = AnthonWellsjo
+	email = anthonwellsjo@gmail.com
+[init]
+	defaultBranch = main
+[alias]
+	prunelocal = branch -vv | grep 'gone' | awk '{print }' | xargs git branch -D
