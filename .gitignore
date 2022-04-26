@@ -1,0 +1,10 @@
+
+
+Ignore everything
+*
+
+# But not these files...
+!.tmux.conf
+!.gitconfig
+!~/.config/nvim/init.vim
+!.gitignore
