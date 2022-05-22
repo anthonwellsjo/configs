@@ -8,3 +8,5 @@ Ignore everything
 !.gitconfig
 !~/.config/nvim/init.vim
 !.gitignore
+!~.config/lvim/config.lua
+
