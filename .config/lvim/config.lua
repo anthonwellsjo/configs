@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "desert"
+lvim.colorscheme = "papercolor"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -53,6 +53,12 @@ lvim.builtin.which_key.mappings["t"] = {
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
 }
+lvim.builtin.which_key.mappings["z"] = {
+  name = "+Change background",
+  l = { "<cmd>set background=light<cr>", "Light" },
+  d = { "<cmd>set background=dark<cr>", "Dark" },
+}
+lvim.builtin.which_key.mappings["o"] = { "<cmd>only<cr>", "Only" }
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -154,7 +160,8 @@ lvim.builtin.treesitter.highlight.enabled = true
       cmd = "TroubleToggle",
      },
     {'terryma/vim-multiple-cursors'},
-    {'marko-cerovac/material.nvim'}
+    {'marko-cerovac/material.nvim'},
+    {'NLKNguyen/papercolor-theme'}
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
