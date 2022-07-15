@@ -161,7 +161,8 @@ lvim.builtin.treesitter.highlight.enabled = true
      },
     {'terryma/vim-multiple-cursors'},
     {'marko-cerovac/material.nvim'},
-    {'NLKNguyen/papercolor-theme'}
+    {'NLKNguyen/papercolor-theme'},
+    {'simrat39/rust-tools.nvim'}
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
