@@ -1,3 +1,4 @@
 yarn
 sanity
 **/node_modules
+.DS_Store
