@@ -21,9 +21,14 @@ lvim.colorscheme = "papercolor"
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+-- lvim.keys.selection_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+-- move the cursor without leaving insert mode
+lvim.keys.insert_mode["<C-j>"] = "<Left>"
+lvim.keys.insert_mode["<C-l>"] = "<Right>"
+lvim.keys.normal_mode["<C-Up>"] = false
+lvim.keys.normal_mode["<C-Down>"] = false
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -72,6 +77,8 @@ lvim.builtin.which_key.mappings["z"] = {
   p = { "<cmd>colorscheme papercolor<cr>", "Paper" }
 }
 lvim.builtin.which_key.mappings["o"] = { "<cmd>only<cr>", "Only" }
+lvim.builtin.which_key.mappings["r"] = { "<cmd>RustFmt<cr>", "rustfmt" }
+lvim.builtin.which_key.mappings["v"] = { "<cmd>PrettierPartial<cr>", "prettier in current buff" }
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -170,7 +177,6 @@ formatters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
-  { "lunarvim/colorschemes" },
   { "arcticicestudio/nord-vim" },
   { "catppuccin/nvim" },
   { "ellisonleao/gruvbox.nvim" },
@@ -184,6 +190,7 @@ lvim.plugins = {
   { 'NLKNguyen/papercolor-theme' },
   { 'rust-lang/rust.vim' },
   { 'nvim-treesitter/nvim-treesitter-context' },
+  { 'prettier/vim-prettier' }
 }
 
 -- Treesitter sticky header setup
