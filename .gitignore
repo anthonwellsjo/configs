@@ -3,3 +3,4 @@ sanity
 **/node_modules
 .DS_Store
 gh/hosts.yml
+spotify-tui
