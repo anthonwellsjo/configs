@@ -14,7 +14,7 @@ vim.opt.relativenumber = true
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
-lvim.colorscheme = "gruvbox"
+lvim.colorscheme = "papercolor"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -68,7 +68,8 @@ lvim.builtin.which_key.mappings["z"] = {
   d = { "<cmd>set background=dark<cr>", "Dark" },
   b = { "<cmd>colorscheme zenburned<cr><cmd>set background=dark<cr>", "Burned" },
   z = { "<cmd>colorscheme zenbones<cr>", "Zen" },
-  g = { "<cmd>colorscheme gruvbox<cr>", "Gruv" }
+  g = { "<cmd>colorscheme gruvbox<cr>", "Gruv" },
+  p = { "<cmd>colorscheme papercolor<cr>", "Paper" }
 }
 lvim.builtin.which_key.mappings["o"] = { "<cmd>only<cr>", "Only" }
 
