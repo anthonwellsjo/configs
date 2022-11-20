@@ -190,8 +190,18 @@ lvim.plugins = {
   { 'NLKNguyen/papercolor-theme' },
   { 'rust-lang/rust.vim' },
   { 'nvim-treesitter/nvim-treesitter-context' },
-  { 'prettier/vim-prettier' }
+  { 'prettier/vim-prettier' },
+  {'fedepujol/move.nvim'}
 }
+
+-- fedepujol/move keybindings
+-- -- Visual-mode commands
+local opts = {} -- check the lspconfig documentation for a list of all possible options
+
+vim.keymap.set('v', '<S-j>', ':MoveBlock(1)<CR>', opts)
+vim.keymap.set('v', '<S-k>', ':MoveBlock(-1)<CR>', opts)
+vim.keymap.set('v', '<S-h>', ':MoveHBlock(-1)<CR>', opts)
+vim.keymap.set('v', '<S-l>', ':MoveHBlock(1)<CR>', opts)
 
 -- Treesitter sticky header setup
 require 'treesitter-context'.setup {
