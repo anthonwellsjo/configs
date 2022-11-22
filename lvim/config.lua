@@ -11,6 +11,13 @@ an executable
 -- vim
 vim.opt.relativenumber = true
 
+-- copy file path command
+vim.api.nvim_create_user_command("Cppath", function()
+  local path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", path)
+  vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})
+
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
