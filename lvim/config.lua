@@ -11,9 +11,16 @@ an executable
 -- vim
 vim.opt.relativenumber = true
 
--- copy file path command
+-- copy absolute file path
 vim.api.nvim_create_user_command("Cppath", function()
   local path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", path)
+  vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})
+
+-- copy from git root absolute file path
+vim.api.nvim_create_user_command("Cprootpath", function()
+  local path = vim.fn.expand('%')
   vim.fn.setreg("+", path)
   vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
