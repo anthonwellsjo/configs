@@ -81,6 +81,14 @@ lvim.builtin.which_key.mappings["t"] = {
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
 }
+lvim.builtin.which_key.mappings["a"] = {
+  name = "+Two slash queries",
+  i = { "<cmd>InspectTwoslashQueries<cr>", "Inspect" },
+  e = { "<cmd>EnableTwoslashQueries<cr>", "Enable" },
+  d = { "<cmd>DisableTwoslashQueries<cr>", "Disable" },
+  r = { "<cmd>RemoveTwoslashQueries<cr>", "Remove all" }
+}
+
 lvim.builtin.which_key.mappings["z"] = {
   name = "+Change background",
   l = { "<cmd>set background=light<cr>", "Light" },
@@ -167,7 +175,7 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   {
     command = "prettier",
-    filetypes = { "typescript", "typescriptreact", "css", "scss" },
+    filetypes = { "typescript", "typescriptreact", "css", "scss", "vue" },
   },
 }
 
@@ -205,8 +213,17 @@ lvim.plugins = {
   { 'rust-lang/rust.vim' },
   { 'nvim-treesitter/nvim-treesitter-context' },
   { 'prettier/vim-prettier' },
-  {'fedepujol/move.nvim'}
+  { 'fedepujol/move.nvim' },
+  { 'eandrju/cellular-automaton.nvim' },
+  { 'marilari88/twoslash-queries.nvim' }
 }
+
+-- twoslash queries lsp setup
+require("lspconfig")["tsserver"].setup({
+    on_attach = function(client, bufnr)
+       require("twoslash-queries").attach(client, bufnr)
+    end,
+})
 
 -- fedepujol/move keybindings
 -- -- Visual-mode commands
