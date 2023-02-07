@@ -90,6 +90,15 @@ lvim.builtin.which_key.mappings["z"] = {
   g = { "<cmd>colorscheme gruvbox<cr>", "Gruv" },
   p = { "<cmd>colorscheme papercolor<cr>", "Paper" }
 }
+lvim.builtin.which_key.mappings["n"] = {
+  name = "+Harpoon",
+  a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file" },
+  s = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Toggle quick menu" },
+  n = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next" },
+  p = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Next" },
+
+}
+
 lvim.builtin.which_key.mappings["o"] = { "<cmd>only<cr>", "Only" }
 lvim.builtin.which_key.mappings["r"] = { "<cmd>RustFmt<cr>", "rustfmt" }
 lvim.builtin.which_key.mappings["v"] = { "<cmd>PrettierPartial<cr>", "prettier in current buff" }
@@ -205,7 +214,10 @@ lvim.plugins = {
   { 'rust-lang/rust.vim' },
   { 'nvim-treesitter/nvim-treesitter-context' },
   { 'prettier/vim-prettier' },
-  {'fedepujol/move.nvim'}
+  { 'fedepujol/move.nvim' },
+  { 'ThePrimeagen/harpoon' },
+  { 'tpope/vim-fugitive' },
+  { 'tpope/vim-surround'}
 }
 
 -- fedepujol/move keybindings
