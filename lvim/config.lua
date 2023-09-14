@@ -88,7 +88,7 @@ lvim.builtin.which_key.mappings["n"] = {
 
 lvim.builtin.which_key.mappings["o"] = { "<cmd>only<cr>", "Only" }
 lvim.builtin.which_key.mappings["r"] = { "<cmd>:%! rustfmt<cr>", "rustfmt" }
-lvim.builtin.which_key.mappings["v"] = { "<cmd>PrettierPartial<cr>", "prettier in current buff" }
+lvim.builtin.which_key.mappings["v"] = { "<cmd>PrettierAsync<cr>", "prettier in current buff" }
 
 
 lvim.builtin.alpha.active = true
