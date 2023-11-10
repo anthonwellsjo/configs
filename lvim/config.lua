@@ -88,7 +88,7 @@ lvim.builtin.which_key.mappings["n"] = {
 
 lvim.builtin.which_key.mappings["o"] = { "<cmd>only<cr>", "Only" }
 lvim.builtin.which_key.mappings["r"] = { "<cmd>:%! rustfmt<cr>", "rustfmt" }
-lvim.builtin.which_key.mappings["v"] = { "<cmd>PrettierAsync<cr>", "prettier in current buff" }
+lvim.builtin.which_key.mappings["v"] = { "<cmd>Neoformat<cr>", "Format buffer" }
 
 
 lvim.builtin.alpha.active = true
@@ -96,35 +96,9 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-
--- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
-}
-
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 
-
--- -- set a formatter, this will override the language server formatting capabilities (if it exists)
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
-  {
-    command = "prettier",
-    filetypes = { "typescript", "typescriptreact", "css", "scss", "vue" },
-  },
-}
 
 -- Additional Plugins
 lvim.plugins = {
@@ -145,7 +119,8 @@ lvim.plugins = {
   { 'fedepujol/move.nvim' },
   { 'ThePrimeagen/harpoon' },
   { 'tpope/vim-fugitive' },
-  { 'tpope/vim-surround' }
+  { 'tpope/vim-surround' },
+  { 'sbdchd/neoformat' }
 }
 
 -- fedepujol/move keybindings
