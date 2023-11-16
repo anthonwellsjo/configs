@@ -50,6 +50,7 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
 
+lvim.lsp.automatic_servers_installation = false
 
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
